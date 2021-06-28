@@ -1,14 +1,10 @@
-------------------------------------------------------------------------
-Dies ist die README-Datei des Projekts. Hier sollten Sie Ihr Projekt
-beschreiben.
-Erzählen Sie dem Leser (jemand, der nichts über dieses Projekt weiss),
-alles, was er/sie wissen muss. Üblicherweise sollte der Kommentar 
-zumindest die folgenden Angaben umfassen:
+Sortierverfahren------------------------------------------------------------------------
+Dies ist die README-Datei des Projekts.
 ------------------------------------------------------------------------
 
-PROJEKTBEZEICHNUNG:
-PROJEKTZWECK:
-VERSION oder DATUM:
-WIE IST DAS PROJEKT ZU STARTEN:
-AUTOR(EN):
-BENUTZERHINWEISE:
+PROJEKTBEZEICHNUNG: Verschiedene Sortierverfahren im Überblick
+PROJEKTZWECK: erlernen und implemntieren verschiedener einfacher Sortierverfahren
+VERSION oder DATUM: v.0.1 25.06.2021
+WIE IST DAS PROJEKT ZU STARTEN: Ein Objekt der Klasse Billard_KugelLager erzeugen
+AUTOR(EN): Simon Ohrendorf
+BENUTZERHINWEIS: Das Projekt hat einen Sachzusammenhang (Ein Billiardspiel), daher die entsprechenden Namen.
