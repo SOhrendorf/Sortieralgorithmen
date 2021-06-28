@@ -1,8 +1,8 @@
 
-public class Bubbelsort
+public class Billard_KugelLager 
 {
-    private Kugel[] KugelLager;
-    public Bubbelsort()
+    Kugel[] KugelLager;
+    public Billard_KugelLager()
     {
         KugelLager = new Kugel[15];
         Kugel Kugel1 = new Kugel(1, "gelb", false);
@@ -21,8 +21,8 @@ public class Bubbelsort
         Kugel Kugel14 = new Kugel(14, "gruen", true);
         Kugel Kugel15 = new Kugel(15, "magenta", true);
         LegeKugelInsLagerAb(0, Kugel5);
-        LegeKugelInsLagerAb(1, Kugel4);
-        LegeKugelInsLagerAb(2, Kugel1);
+        LegeKugelInsLagerAb(1, Kugel1);
+        LegeKugelInsLagerAb(2, Kugel4);
         LegeKugelInsLagerAb(3, Kugel2);
         LegeKugelInsLagerAb(4, Kugel9);
         LegeKugelInsLagerAb(5, Kugel10);
@@ -46,7 +46,7 @@ public class Bubbelsort
         return KugelLager[n];
     }
     
-    public void KugelLagerNumerischAufsteigendSortieren(){
+    public void Bubbelsort(){
         boolean switched = false;
         int laengeDesKugelLagers = KugelLager.length;
         do{
@@ -61,5 +61,17 @@ public class Bubbelsort
             }
             laengeDesKugelLagers = laengeDesKugelLagers -1;
         }while(switched == true);
+    }
+    
+    public void Insertionsort(){
+       for(int i = 0; i < KugelLager.length -1; i++){
+           int zuSortierendePoition = i+1;
+           Kugel zuSortierendesObjekt = KugelLager[zuSortierendePoition];
+           while(zuSortierendePoition > 0 && KugelLager[zuSortierendePoition-1].getZahl() > zuSortierendesObjekt.getZahl()){
+               KugelLager[zuSortierendePoition] = KugelLager[zuSortierendePoition-1];
+               zuSortierendePoition--; 
+           }
+           KugelLager[zuSortierendePoition] = zuSortierendesObjekt;
+       }
     }
 }
