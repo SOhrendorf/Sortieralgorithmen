@@ -65,13 +65,13 @@ public class Billard_KugelLager
     
     public void Insertionsort(){
        for(int i = 0; i < KugelLager.length -1; i++){
-           int zuSortierendePoition = i+1;
-           Kugel zuSortierendesObjekt = KugelLager[zuSortierendePoition];
-           while(zuSortierendePoition > 0 && KugelLager[zuSortierendePoition-1].getZahl() > zuSortierendesObjekt.getZahl()){
-               KugelLager[zuSortierendePoition] = KugelLager[zuSortierendePoition-1];
-               zuSortierendePoition--; 
+           int zuSortierendePoition = i+1; //Bereichsidee - in den unsortieren Bereich kommen
+           Kugel KopiezuSortierendesObjekt = KugelLager[zuSortierendePoition];
+           while(zuSortierendePoition > 0 && KugelLager[zuSortierendePoition-1].getZahl() > KopiezuSortierendesObjekt.getZahl()){
+               KugelLager[zuSortierendePoition] = KugelLager[zuSortierendePoition-1]; //höhere Kugel eins höher Schieben
+               zuSortierendePoition--; //Bereich verschieben
            }
-           KugelLager[zuSortierendePoition] = zuSortierendesObjekt;
+           KugelLager[zuSortierendePoition] = KopiezuSortierendesObjekt; //Sortierendekugel einsetzten
        }
     }
 }
