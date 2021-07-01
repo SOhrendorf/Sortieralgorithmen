@@ -35,17 +35,17 @@ public class Billard_KugelLager
         LegeKugelInsLagerAb(12, Kugel13);
         LegeKugelInsLagerAb(13, Kugel14);
         LegeKugelInsLagerAb(14, Kugel12);
-        
+
     }
-    
+
     public void LegeKugelInsLagerAb(int n, Kugel AbzulegendeKugel){
         KugelLager[n] = AbzulegendeKugel;
     }
-    
+
     public Kugel getKugelAnStelleAusDemLager(int n){
         return KugelLager[n];
     }
-    
+
     public void Bubbelsort(){
         boolean switched = false;
         int laengeDesKugelLagers = KugelLager.length;
@@ -62,16 +62,29 @@ public class Billard_KugelLager
             laengeDesKugelLagers = laengeDesKugelLagers -1;
         }while(switched == true);
     }
-    
+
     public void Insertionsort(){
-       for(int i = 0; i < KugelLager.length -1; i++){
-           int zuSortierendePoition = i+1; //Bereichsidee - in den unsortieren Bereich kommen
-           Kugel KopiezuSortierendesObjekt = KugelLager[zuSortierendePoition];
-           while(zuSortierendePoition > 0 && KugelLager[zuSortierendePoition-1].getZahl() > KopiezuSortierendesObjekt.getZahl()){
-               KugelLager[zuSortierendePoition] = KugelLager[zuSortierendePoition-1]; //höhere Kugel eins höher Schieben
-               zuSortierendePoition--; //Bereich verschieben
-           }
-           KugelLager[zuSortierendePoition] = KopiezuSortierendesObjekt; //Sortierendekugel einsetzten
-       }
+        for(int i = 0; i < KugelLager.length -1; i++){
+            int zuSortierendePoition = i+1; //Bereichsidee - in den unsortieren Bereich kommen
+            Kugel KopiezuSortierendesObjekt = KugelLager[zuSortierendePoition];
+            while(zuSortierendePoition > 0 && KugelLager[zuSortierendePoition-1].getZahl() > KopiezuSortierendesObjekt.getZahl()){
+                KugelLager[zuSortierendePoition] = KugelLager[zuSortierendePoition-1]; //höhere Kugel eins höher Schieben
+                zuSortierendePoition--; //Bereich verschieben
+            }
+            KugelLager[zuSortierendePoition] = KopiezuSortierendesObjekt; //Sortierendekugel einsetzten
+        }
+    }
+
+    public void Selectionsort(){
+        for(int i = 0; i < KugelLager.length -1; i++){
+            for(int j = i+1; j < KugelLager.length; j++){
+                if(KugelLager[j].getZahl() < KugelLager[i].getZahl()){
+                    Kugel KopieDerZuTauschendenKugel = KugelLager[i];
+                    KugelLager[i] = KugelLager[j];
+                    KugelLager[j] = KopieDerZuTauschendenKugel;
+                }
+            }
+        }
     }
 }
+
